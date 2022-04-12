@@ -73,6 +73,14 @@ function SendPost() {
             });
     };
 
+    const sentHandler = () => {
+        setTimeout(() => {
+            setIsSent(false);
+            setData({ title: '', body: '' });
+        }
+        , 1000);
+    };
+
     return (
         <>
             {isSending ? (
@@ -83,7 +91,7 @@ function SendPost() {
             ) : isSent ? (
                 <Gifs
                     src="https://c.tenor.com/A-1z4jlGrXgAAAAi/onay2.gif"
-                    alt="Sending ..."
+                    alt="Sending ..." onLoad={sentHandler}
                 />
             ) : error ? (
                 <Gifs

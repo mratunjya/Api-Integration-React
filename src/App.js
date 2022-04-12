@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import PostList from './API/PostList';
 import SendPost from './API/SendPost';
+import { FlexBox } from './Components/Common/FlexBox';
 
 const ActionButton = styled.button`
     display: block;
@@ -30,12 +31,14 @@ function App() {
 
     return (
         <>
-            {!viewPost && (
-                <ActionButton onClick={fetchPost}>Fetch Posts</ActionButton>
-            )}
-            {!viewForm && (
-                <ActionButton onClick={sendPost}>Send a Post</ActionButton>
-            )}
+            <FlexBox justify="center" align="center">
+                {!viewPost && (
+                    <ActionButton onClick={fetchPost}>Fetch Posts</ActionButton>
+                )}
+                {!viewForm && (
+                    <ActionButton onClick={sendPost}>Send a Post</ActionButton>
+                )}
+            </FlexBox>
             {viewPost && <PostList />}
             {viewForm && <SendPost />}
         </>

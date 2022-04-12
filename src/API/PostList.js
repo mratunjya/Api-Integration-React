@@ -6,7 +6,7 @@ import { FlexBox } from '../Components/Common/FlexBox';
 
 const AllCards = styled(FlexBox)`
     width: 95%;
-    margin: 0 auto;
+    margin: 0 auto 40px;
 `;
 
 const Heading = styled.h1`
