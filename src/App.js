@@ -1,6 +1,8 @@
+import PostList from './API/PostList';
+
 function App() {
   return (
-    <p>App</p>
+    <PostList/>
   );
 }
 
