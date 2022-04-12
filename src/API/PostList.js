@@ -23,6 +23,7 @@ function PostList() {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
+
     useEffect(() => {
         axios
             .get('https://jsonplaceholder.typicode.com/posts')
@@ -54,7 +55,7 @@ function PostList() {
                 ) : error ? (
                     <Gifs
                         src="https://c.tenor.com/2gdcdzl-xaoAAAAC/error-computer.gif"
-                        alt="Loading ...."
+                        alt="Error ...."
                     />
                 ) : (
                     posts.map((post) => <Card key={post.id} post={post} />)
